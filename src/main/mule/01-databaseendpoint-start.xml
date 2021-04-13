@@ -13,7 +13,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 		<db:my-sql-connection host="localhost" port="3306" user="root" password="dara2005" database="muletrainingdb" />
 	</db:config>
 	<flow name="01-databaseendpoint-startFlow" doc:id="42ce5153-7716-46e8-806c-adb997c06250" >
-		<http:listener doc:name="Listener" doc:id="e47d4132-0b0b-4ea9-82da-f9f7942d71e1" config-ref="HTTP_Listener_config" path="dbs" outputMimeType="application/json"/>
+		<http:listener doc:name="Listener" doc:id="e47d4132-0b0b-4ea9-82da-f9f7942d71e1" config-ref="HTTP_Listener_config" path="dbL" outputMimeType="application/json"/>
 		<db:select doc:name="Select" doc:id="1352ef19-ae48-4349-ad5a-1ed6d0eff6d9" config-ref="Database_Config">
 			<db:sql ><![CDATA[SELECT * FROM muletrainingdb.product where product_id=:prduct_id]]></db:sql>
 			<db:input-parameters ><![CDATA[#[output application/java
